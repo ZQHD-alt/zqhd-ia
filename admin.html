@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>ZQHD.ia — Console</title>
+<link rel="stylesheet" href="/admin.css" />
+</head>
+<body>
+
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="logo">Z</div>
+      <h1>Console ZQHD.ia</h1>
+      <form id="loginForm">
+        <input type="password" id="passwordInput" placeholder="Mot de passe" autocomplete="current-password" required />
+        <button type="submit">Se connecter</button>
+      </form>
+      <div id="loginError" class="login-error" hidden>Mot de passe incorrect.</div>
+    </div>
+  </div>
+
+  <div id="dashboard" class="dashboard" hidden>
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo small">Z</div>
+        <span>ZQHD.ia — Console</span>
+      </div>
+      <div class="conv-list" id="convList"></div>
+    </aside>
+
+    <main class="thread">
+      <div id="emptyState" class="empty-state">
+        <p>Sélectionne une conversation à gauche.</p>
+      </div>
+
+      <div id="threadView" class="thread-view" hidden>
+        <div class="thread-header">
+          <div class="thread-title" id="threadTitle">Conversation</div>
+          <label class="ai-toggle">
+            <input type="checkbox" id="aiToggle" />
+            <span>Réponse IA automatique</span>
+          </label>
+        </div>
+
+        <div class="thread-messages" id="threadMessages"></div>
+
+        <form id="replyForm" class="reply-form">
+          <textarea id="replyInput" rows="2" placeholder="Écrire une réponse…"></textarea>
+          <div class="reply-actions">
+            <button type="button" id="suggestBtn" class="btn-ghost">✨ Suggérer (IA)</button>
+            <button type="submit" class="btn-primary">Envoyer</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/admin.js"></script>
+</body>
+</html>

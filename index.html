@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<title>ZQHD.ia</title>
+<link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">Z</div>
+        <div class="brand-text">
+          <div class="brand-name">ZQHD.ia</div>
+          <div class="status"><span class="dot"></span>En ligne</div>
+        </div>
+      </div>
+    </header>
+
+    <main class="chat" id="chat">
+      <div class="welcome">
+        <div class="welcome-logo">Z</div>
+        <h1>ZQHD.ia</h1>
+        <p>Pose-moi une question pour commencer.</p>
+      </div>
+    </main>
+
+    <div class="typing-row" id="typingRow" hidden>
+      <div class="bubble bubble-assistant typing">
+        <span class="typing-text">ZQHD.ia réfléchit</span>
+        <span class="typing-dots"><span></span><span></span><span></span></span>
+      </div>
+    </div>
+
+    <footer class="composer">
+      <form id="composerForm" autocomplete="off">
+        <textarea
+          id="messageInput"
+          rows="1"
+          placeholder="Écris un message…"
+          maxlength="4000"
+        ></textarea>
+        <button type="submit" id="sendBtn" aria-label="Envoyer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none">
+            <path d="M4 12L20 4L14 20L11 13L4 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </form>
+    </footer>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/chat.js"></script>
+</body>
+</html>
